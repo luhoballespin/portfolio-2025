@@ -1,0 +1,646 @@
+:root {
+  --primary-color: #1a1a2e; /* Azul oscuro más profundo */
+  --accent-color: #e94560; /* Rojo más moderno */
+  --secondary-color: #16213e; /* Azul medio para contraste */
+  --text-color: #0f3460; /* Azul para texto */
+  --bg-light: rgba(236, 240, 241, 0.85); /* Fondo semi-transparente */
+  --white: #ffffff;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), #263846);
+  color: var(--white);
+  padding: 10px 0; /* Reducido de 20px a 10px */
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Asegúrate de que el contenido principal esté por encima de la imagen */
+main {
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+  padding: 20px;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  font-size: 2em; /* Reducido de 2.8em a 2em */
+  font-weight: 700;
+  background: linear-gradient(120deg, #fff, #e6e6e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  padding: 5px 0; /* Reducido de 10px a 5px */
+  letter-spacing: 2px;
+  animation: titleFade 1s ease-in-out;
+}
+
+/* Animación para el título */
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de línea decorativa debajo del título */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px; /* Reducido de 3px a 2px */
+  background: var(--accent-color);
+  animation: lineExpand 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animación para la línea decorativa */
+@keyframes lineExpand {
+  to {
+    width: 40px; /* Reducido de 60px a 40px */
+  }
+}
+
+nav {
+  margin: 10px 0; /* Reducido de 20px a 10px */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+  position: relative;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 8px 12px; /* Reducido de 10px 15px a 8px 12px */
+  display: block;
+  border-radius: 5px;
+  transition: var(--transition);
+  font-size: 0.9em; /* Texto más pequeño */
+}
+
+nav a:hover {
+  background-color: var(--white);
+  color: var(--accent-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Mejorar contraste del texto para mejor legibilidad */
+section h2 {
+  color: var(--primary-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+section p {
+  color: var(--text-color);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #263846;
+  color: var(--white);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  nav ul {
+    flex-direction: row; /* Mantener horizontal en móvil */
+    flex-wrap: wrap; /* Permitir wrap en pantallas pequeñas */
+    gap: 5px;
+  }
+
+  nav li {
+    margin: 5px;
+  }
+
+  /* Header y navegación */
+  header {
+    padding: 5px 0;
+    border-radius: 0 0 15px 15px;
+    margin: 0 5px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.85em;
+  }
+
+  /* Secciones principales */
+  section {
+    padding: 15px;
+    margin: 15px 10px;
+    border-radius: 8px;
+  }
+
+  /* Grid de proyectos */
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .proyecto-card {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .proyecto-card img {
+    height: 180px;
+  }
+
+  .proyecto-card h3 {
+    font-size: 1.2em;
+    padding: 12px;
+  }
+
+  .proyecto-card p {
+    font-size: 0.85em;
+    padding: 0 12px 12px;
+  }
+
+  /* Formulario de contacto */
+  form {
+    gap: 8px;
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  /* Redes sociales */
+  #contacto ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  #contacto li {
+    margin: 5px;
+  }
+
+  /* Parallax */
+  .parallax-container {
+    height: 40vh;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4em;
+  }
+
+  nav {
+    margin: 5px 0;
+  }
+
+  nav a {
+    padding: 5px 8px;
+    font-size: 0.8em;
+  }
+
+  .proyecto-card {
+    margin: 0 5px;
+  }
+
+  .proyecto-card img {
+    height: 160px;
+  }
+
+  section {
+    margin: 10px 5px;
+    padding: 10px;
+  }
+
+  .highlight {
+    font-size: 0.9em;
+  }
+
+  header {
+    border-radius: 0 0 10px 10px;
+    margin: 0 3px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    padding: 5px 0;
+  }
+
+  .parallax-container {
+    height: 100vh;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+}
+
+/* Estilos para la lista de redes sociales */
+#contacto ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#contacto li {
+  margin: 0 15px;
+}
+
+#contacto a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+#contacto a i {
+  margin-left: 8px;
+  font-size: 1.5em;
+}
+
+#contacto a:hover {
+  color: var(--accent-color);
+}
+
+/* Estilos para el formulario de contacto */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
+}
+
+button {
+  background-color: var(--accent-color);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(
+    --secondary-color
+  ); /* Reemplazar el verde actual (#14b422) */
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Mejoras visuales */
+.proyecto-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.proyecto-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.proyecto-card:hover::before {
+  opacity: 1;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.proyecto-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Asegura que el enlace ocupe toda la tarjeta */
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.proyecto-card:hover img {
+  transform: scale(1.05);
+}
+
+.proyecto-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--accent-color), 0) 0%,
+    rgba(var(--accent-color), 0.2) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.proyecto-card:hover::after {
+  opacity: 1;
+}
+
+.proyecto-card h3 {
+  padding: 15px;
+  margin: 0;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.proyecto-card:hover h3 {
+  color: var(--secondary-color);
+}
+
+.proyecto-card p {
+  padding: 0 15px 15px;
+  margin: 0;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.highlight {
+  transition: background-size 0.25s ease-in;
+  color: #000000;
+  padding: 0 5px;
+  border-radius: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.parallax-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url("../images/repeatrutine.png"); /* Reemplaza con tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.4); /* Oscurece la imagen para mejor legibilidad */
+  z-index: 1;
+}
+
+/* Asegura que el contenido sea legible sobre la imagen */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 20px;
+  animation: fadeIn 1s ease-out;
+  background: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente opcional */
+  border-radius: 10px;
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+.name-title {
+  font-size: 4em;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(120deg, #fff, #e6e6e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: slideDown 1s ease-out;
+}
+
+.profession {
+  font-size: 1.5em;
+  margin: 20px 0;
+  color: var(--accent-color);
+  font-weight: 300;
+  letter-spacing: 2px;
+  animation: slideUp 1s ease-out;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.tech-stack span {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.tech-stack span:hover {
+  background: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .name-title {
+    font-size: 2.5em;
+  }
+
+  .profession {
+    font-size: 1.2em;
+  }
+
+  .tech-stack span {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}
+
+/* Efecto de scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animación para los elementos al hacer scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
