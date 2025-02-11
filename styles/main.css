@@ -291,6 +291,15 @@ footer {
     padding: 15px;
     width: 95%;
   }
+
+  .proyecto-card {
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .proyecto-card img {
+    height: 180px;
+  }
 }
 
 /* Ajustes para pantallas muy pequeñas */
@@ -373,6 +382,20 @@ footer {
     width: 100%;
     height: 180px;
     object-fit: cover;
+  }
+
+  .proyecto-card {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+  }
+
+  .proyectos-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -495,6 +518,8 @@ button:hover {
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  margin: 0 auto;
 }
 
 .proyecto-card::before {
@@ -537,6 +562,9 @@ button:hover {
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .proyecto-card:hover img {
