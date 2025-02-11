@@ -1,12 +1,13 @@
 :root {
-  --primary-color: #1a1a2e; /* Azul oscuro más profundo */
-  --accent-color: #e94560; /* Rojo más moderno */
-  --secondary-color: #16213e; /* Azul medio para contraste */
-  --text-color: #0f3460; /* Azul para texto */
-  --bg-light: rgba(236, 240, 241, 0.85); /* Fondo semi-transparente */
+  /* Paleta de colores más moderna */
+  --primary-color: #2d3436; /* Gris oscuro más sofisticado */
+  --accent-color: #00b894; /* Verde menta moderno */
+  --secondary-color: #0984e3; /* Azul vibrante */
+  --text-color: #2d3436; /* Negro suave para texto */
+  --bg-light: rgba(236, 240, 241, 0.95);
   --white: #ffffff;
-  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -17,8 +18,11 @@ body {
   color: var(--text-color);
 }
 
+/* Mejora del header */
 header {
-  background: linear-gradient(135deg, var(--primary-color), #263846);
+  background: rgba(45, 52, 54, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--white);
   padding: 10px 0; /* Reducido de 20px a 10px */
   text-align: center;
@@ -28,15 +32,17 @@ header {
   border-radius: 0 0 20px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin: 0 10px;
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* Asegúrate de que el contenido principal esté por encima de la imagen */
 main {
   position: relative;
   background-color: transparent;
   z-index: 1;
-  padding: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -119,16 +125,18 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Mejora de las secciones */
 section {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
   padding: 20px;
   margin: 20px auto;
+  width: 100%;
   max-width: 800px;
   border-radius: 10px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: fadeInUp 0.6s ease-out;
+  box-sizing: border-box;
 }
 
 /* Mejorar contraste del texto para mejor legibilidad */
@@ -205,10 +213,13 @@ footer {
     grid-template-columns: 1fr;
     gap: 15px;
     padding: 10px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .proyecto-card {
     margin: 0 auto;
+    width: 100%;
     max-width: 400px;
   }
 
@@ -255,7 +266,30 @@ footer {
 
   /* Parallax */
   .parallax-container {
-    height: 40vh;
+    height: 100vh;
+    min-height: 500px;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll; /* Mejor rendimiento en móviles */
+    height: 100%;
+    transform: none !important; /* Previene problemas de parallax en iOS */
+  }
+
+  .hero-content {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  section {
+    margin: 15px auto;
+    padding: 15px;
+    width: 95%;
   }
 }
 
@@ -285,6 +319,7 @@ footer {
   section {
     margin: 10px 5px;
     padding: 10px;
+    width: 100%;
   }
 
   .highlight {
@@ -295,6 +330,31 @@ footer {
     border-radius: 0 0 10px 10px;
     margin: 0 3px;
   }
+
+  .parallax-container {
+    height: 100vh;
+    min-height: 400px;
+  }
+
+  .hero-content {
+    padding: 15px;
+  }
+
+  .name-title {
+    font-size: 2em;
+  }
+
+  .profession {
+    font-size: 1.1em;
+  }
+
+  main {
+    padding: 5px;
+  }
+
+  .proyectos-grid {
+    padding: 5px;
+  }
 }
 
 /* Orientación landscape en móviles */
@@ -304,7 +364,11 @@ footer {
   }
 
   .parallax-container {
-    height: 100vh;
+    height: 120vh;
+  }
+
+  .parallax-bg {
+    background-position: center 0;
   }
 
   nav ul {
@@ -371,11 +435,14 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
 }
 
+/* Mejora de los botones */
 button {
-  background-color: var(--accent-color);
-  padding: 12px 24px;
+  background: var(--accent-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 8px;
   border: none;
-  border-radius: 5px;
   color: var(--white);
   font-size: 0.9em;
   cursor: pointer;
@@ -385,9 +452,9 @@ button {
 }
 
 button:hover {
-  background-color: var(
-    --secondary-color
-  ); /* Reemplazar el verde actual (#14b422) */
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(9, 132, 227, 0.3);
 }
 
 .proyectos-grid {
@@ -401,11 +468,11 @@ button:hover {
 .proyecto-card {
   position: relative;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(12px);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -429,10 +496,10 @@ button:hover {
   opacity: 1;
 }
 
+/* Mejora de las tarjetas de proyecto */
 .proyecto-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .proyecto-card a {
@@ -516,26 +583,29 @@ button:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%;
-  background-image: url("../images/repeatrutine.png"); /* Reemplaza con tu imagen */
+  height: 100%;
+  background-image: url("../images/repeatrutine.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.4); /* Oscurece la imagen para mejor legibilidad */
+  background-attachment: fixed;
+  filter: brightness(0.4);
   z-index: 1;
 }
 
 /* Asegura que el contenido sea legible sobre la imagen */
+/* Mejora de la sección hero */
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   color: var(--white);
-  padding: 20px;
+  padding: 30px;
   animation: fadeIn 1s ease-out;
-  background: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente opcional */
+  background: rgba(45, 52, 54, 0.8);
   border-radius: 10px;
   backdrop-filter: blur(5px); /* Efecto de desenfoque */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .name-title {
@@ -568,17 +638,20 @@ button:hover {
   animation: fadeIn 1.5s ease-out;
 }
 
+/* Mejora de los badges de tecnologías */
 .tech-stack span {
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .tech-stack span:hover {
   background: var(--accent-color);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
 }
 
 @keyframes fadeIn {
@@ -642,5 +715,56 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Ajustes responsive para móviles */
+@media (max-width: 768px) {
+  .parallax-container {
+    height: 100vh;
+    min-height: 500px;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll; /* Mejor rendimiento en móviles */
+    height: 100%;
+    transform: none !important; /* Previene problemas de parallax en iOS */
+  }
+
+  .hero-content {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .parallax-container {
+    height: 100vh;
+    min-height: 400px;
+  }
+
+  .hero-content {
+    padding: 15px;
+  }
+
+  .name-title {
+    font-size: 2em;
+  }
+
+  .profession {
+    font-size: 1.1em;
+  }
+}
+
+/* Ajuste para orientación landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+  .parallax-container {
+    height: 120vh;
+  }
+
+  .parallax-bg {
+    background-position: center 0;
   }
 }
