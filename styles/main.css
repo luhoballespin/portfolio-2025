@@ -1107,6 +1107,25 @@ html {
   .highlight {
     font-size: 0.9em;
   }
+
+  .imagen-container {
+    height: 180px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .imagen-container img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .proyectos-grid {
+    padding: 10px;
+    gap: 15px;
+  }
 }
 
 /* Media Query para orientación landscape */
@@ -1124,4 +1143,19 @@ html {
     overflow-x: auto;
     padding-bottom: 5px;
   }
+}
+
+/* Base styles for proyecto-card */
+.imagen-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
