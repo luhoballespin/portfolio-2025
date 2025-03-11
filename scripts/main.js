@@ -4,3 +4,7 @@ document.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
   parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
 });
+
+document.getElementById("theme-toggle").addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+});

@@ -1,12 +1,11 @@
 :root {
-  /* Paleta de colores más moderna */
-  --primary-color: #2d3436; /* Gris oscuro más sofisticado */
-  --accent-color: #00b894; /* Verde menta moderno */
-  --secondary-color: #0984e3; /* Azul vibrante */
-  --text-color: #2d3436; /* Negro suave para texto */
-  --bg-light: rgba(236, 240, 241, 0.95);
-  --white: #ffffff;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --primary-color: #071318; /* Azul */
+  --secondary-color: #28a745; /* Verde */
+  --accent-color: #ffc107; /* Naranja */
+  --text-color: #343a40; /* Gris oscuro */
+  --bg-light: #ffffff; /* Blanco */
+  --bg-dark: #f8f9fa; /* Gris claro */
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.144);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -14,25 +13,30 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--primary-color);
+  background-color: var(--bg-light);
   color: var(--text-color);
+  transition: var(--transition);
 }
 
 /* Mejora del header */
 header {
-  background: rgba(45, 52, 54, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  padding: 10px 0; /* Reducido de 20px a 10px */
+  background-color: #ffffff6e;
+  color: var(--bg-light);
+  padding: 5px 0;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
+  box-shadow: var(--shadow);
+  margin: 0 0 0 0;
 }
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Asegúrate de que el contenido principal esté por encima de la imagen */
 main {
   position: relative;
@@ -46,11 +50,11 @@ main {
 }
 
 h1 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px rgb(2, 1, 1);
   margin: 0;
-  font-size: 2em; /* Reducido de 2.8em a 2em */
+  font-size: 2.5em; /* Ajuste de tamaño de fuente */
   font-weight: 700;
-  background: linear-gradient(120deg, #fff, #e6e6e6);
+  background: linear-gradient(120deg, #050000, #000000);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -94,7 +98,7 @@ h1::after {
 }
 
 nav {
-  margin: 10px 0; /* Reducido de 20px a 10px */
+  margin: 20px 0;
 }
 
 nav ul {
@@ -105,31 +109,28 @@ nav ul {
 }
 
 nav li {
-  margin: 0 15px;
+  margin: 0 15px; /* Ajuste de margen */
   position: relative;
 }
 
 nav a {
-  color: var(--white);
+  color: #000000c5;
   text-decoration: none;
-  padding: 8px 12px; /* Reducido de 10px 15px a 8px 12px */
+  padding: 8px 12px; /* Ajuste de padding */
   display: block;
   border-radius: 5px;
-  transition: var(--transition);
-  font-size: 0.9em; /* Texto más pequeño */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav a:hover {
-  background-color: var(--white);
-  color: var(--accent-color);
+  background-color: var(--bg-light);
+  color: var(--primary-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Mejora de las secciones */
 section {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--bg-light);
   box-shadow: var(--shadow);
   padding: 20px;
   margin: 20px auto;
@@ -157,8 +158,8 @@ section p {
 footer {
   text-align: center;
   padding: 10px 0;
-  background: #263846;
-  color: var(--white);
+  background: var(--primary-color);
+  color: var(--bg-light);
   position: relative;
   bottom: 0;
   width: 100%;
@@ -170,20 +171,34 @@ footer {
   }
 
   nav ul {
-    flex-direction: row; /* Mantener horizontal en móvil */
-    flex-wrap: wrap; /* Permitir wrap en pantallas pequeñas */
-    gap: 5px;
+    flex-direction: column;
   }
 
   nav li {
-    margin: 5px;
+    margin: 10px 0;
   }
 
   /* Header y navegación */
   header {
-    padding: 5px 0;
-    border-radius: 0 0 15px 15px;
-    margin: 0 5px;
+    padding: 10px 0; /* Ajuste de padding para móviles */
+  }
+
+  h1 {
+    font-size: 1.8em; /* Ajuste de tamaño de fuente para móviles */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px; /* Ajuste de espacio entre elementos para móviles */
+  }
+
+  nav li {
+    margin: 5px 0; /* Ajuste de margen para móviles */
+  }
+
+  nav a {
+    padding: 6px 10px; /* Ajuste de padding para móviles */
+    font-size: 0.9em; /* Ajuste de tamaño de fuente para móviles */
   }
 
   h1 {
@@ -343,10 +358,6 @@ footer {
     width: 100%;
   }
 
-  .highlight {
-    font-size: 0.9em;
-  }
-
   header {
     border-radius: 0 0 10px 10px;
     margin: 0 3px;
@@ -465,7 +476,7 @@ footer {
 }
 
 #contacto a {
-  color: var(--text-color);
+  color: #333;
   text-decoration: none;
   font-size: 1.2em;
   display: flex;
@@ -479,7 +490,7 @@ footer {
 }
 
 #contacto a:hover {
-  color: var(--accent-color);
+  color: #ff6f61;
 }
 
 /* Estilos para el formulario de contacto */
@@ -506,34 +517,32 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
 }
 
 /* Mejora de los botones */
 button {
   background: var(--accent-color);
-  padding: 12px 30px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border-radius: 8px;
+  padding: 5px 10px;
   border: none;
-  color: var(--white);
+  border-radius: 5px;
+  color: #ffffff;
   font-size: 0.9em;
   cursor: pointer;
-  transition: var(--transition);
+  transition: background-color 0.3s ease;
   align-self: flex-start;
   font-weight: bold;
 }
 
 button:hover {
-  background: var(--secondary-color);
+  background: #e0a800;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(9, 132, 227, 0.3);
 }
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   width: 100%;
   padding: 15px;
@@ -543,7 +552,7 @@ button:hover {
 /* Mejoras visuales */
 .proyecto-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-light);
   backdrop-filter: blur(12px);
   border-radius: 10px;
   overflow: hidden;
@@ -623,7 +632,7 @@ button:hover {
 .proyecto-card h3 {
   padding: 15px;
   margin: 0;
-  color: var(--accent-color);
+  color: var(--primary-color);
   transition: color 0.3s ease;
 }
 
@@ -639,11 +648,23 @@ button:hover {
 }
 
 .highlight {
+  background: linear-gradient(
+    120deg,
+    var(--accent-color) 0%,
+    var(--accent-color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
   transition: background-size 0.25s ease-in;
-  color: #000000;
+  color: var(--accent-color);
   padding: 0 5px;
   border-radius: 4px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.highlight:hover {
+  background-size: 100% 88%;
 }
 
 .parallax-container {
@@ -893,7 +914,7 @@ html {
 .proyecto-card {
   position: relative;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-light);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -1158,4 +1179,114 @@ html {
   height: 100%;
   object-fit: contain;
   object-position: center;
+}
+
+.sobre-mi-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+  --primary-color: #0000008e;
+  --accent-color: #ffc107;
+  --secondary-color: #28a745;
+  --text-color: #ffffff;
+  --bg-light: #2e2626;
+  --bg-dark: #000000;
+}
+
+body.dark-mode header {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+body.dark-mode header h1 {
+  color: var(--text-color);
+}
+body.dark-mode main h2 {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+body.dark-mode section {
+  background-color: var(--bg-dark);
+}
+
+body.dark-mode nav a {
+  color: var(--text-color);
+}
+
+body.dark-mode nav a:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode footer {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.habilidades-grid,
+.experiencia-item,
+.testimonio-item,
+.certificaciones,
+.blog-item {
+  margin: 20px 0;
+}
+
+.habilidades-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+}
+
+.habilidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
+.habilidad i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.habilidad p {
+  margin: 0;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.habilidad i {
+  font-size: 2em;
+  color: var(--primary-color);
+}
+
+.experiencia-item,
+.testimonio-item,
+.certificaciones,
+.blog-item {
+  background-color: var(--bg-light);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.experiencia-item h3,
+.testimonio-item p,
+.certificaciones li,
+.blog-item h3 {
+  margin: 10px 0;
 }
