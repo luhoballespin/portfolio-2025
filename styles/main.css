@@ -490,7 +490,7 @@ footer {
 }
 
 #contacto a:hover {
-  color: #ff6f61;
+  color: #e0a800;
 }
 
 /* Estilos para el formulario de contacto */
@@ -601,7 +601,7 @@ button:hover {
   transition: transform 0.3s ease;
   object-position: center;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
   background: white;
 }
 
@@ -719,61 +719,7 @@ button:hover {
   animation: slideUp 1s ease-out;
 }
 
-.tech-stack {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  animation: fadeIn 1.5s ease-out;
-}
-
 /* Mejora de los badges de tecnologías */
-.tech-stack span {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 10px 20px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.tech-stack span:hover {
-  background: var(--accent-color);
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -1210,17 +1156,16 @@ body.dark-mode main h2 {
 
 body.dark-mode section {
   background-color: var(--bg-dark);
-} 
-
+}
 
 body.dark-mode nav a {
   color: var(--text-color);
-} 
+}
 
 body.dark-mode .proyecto-card h3 {
   color: var(--text-color);
 }
- 
+
 body.dark-mode nav a:hover {
   background-color: var(--text-color);
   color: var(--primary-color);
@@ -1229,10 +1174,12 @@ body.dark-mode nav a:hover {
 body.dark-mode footer {
   background: var(--primary-color);
   color: var(--text-color);
-} 
+}
 body.dark-mode #contacto ul li a {
-  
   color: var(--text-color);
+}
+body.dark-mode #contacto a:hover {
+  color: #e0a800;
 }
 
 .habilidades-grid,
