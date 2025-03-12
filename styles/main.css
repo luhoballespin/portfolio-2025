@@ -33,8 +33,10 @@ header {
 
 header .container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 /* Asegúrate de que el contenido principal esté por encima de la imagen */
@@ -189,7 +191,7 @@ footer {
 
   nav ul {
     flex-direction: column;
-    gap: 10px; /* Ajuste de espacio entre elementos para móviles */
+    /* Ajuste de espacio entre elementos para móviles */
   }
 
   nav li {
@@ -207,7 +209,7 @@ footer {
 
   nav ul {
     flex-wrap: wrap;
-    gap: 8px;
+
     padding: 0 10px;
   }
 
@@ -1132,6 +1134,52 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.btn-theme-toggle {
+  background: var(--primary-color);
+  color: var(--bg-light);
+  border: none;
+  padding: 5px 5px; /* Tamaño reducido */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Tamaño reducido */
+
+  margin: 0 auto;
+}
+
+.btn-theme-toggle i {
+  font-size: 1em; /* Tamaño reducido */
+}
+
+.btn-theme-toggle:hover {
+  background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .btn-theme-toggle {
+    padding: 4px 321px;
+    gap: 3px;
+  }
+
+  .btn-theme-toggle i {
+    font-size: 0.9em; /* Tamaño reducido para dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-theme-toggle {
+    padding: 3px 152px;
+    gap: 4px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .btn-theme-toggle i {
+    font-size: 0.8em; /* Tamaño reducido para dispositivos muy pequeños */
+  }
+}
 body.dark-mode {
   --primary-color: #0000008e;
   --accent-color: #ffc107;
@@ -1144,6 +1192,9 @@ body.dark-mode {
 body.dark-mode header {
   background: var(--primary-color);
   color: var(--text-color);
+}
+body.dark-mode .btn-theme-toggle {
+  color: #ffffff;
 }
 
 body.dark-mode header h1 {

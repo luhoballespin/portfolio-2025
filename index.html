@@ -15,15 +15,19 @@
   </head>
   <body>
     <header>
-      <h1>Bienvenido a mi Portafolio</h1>
-      <nav>
-        <ul>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <button id="theme-toggle">Cambiar Tema</button>
+      <div class="container">
+        <h1>Bienvenido a mi Portafolio</h1>
+        <nav>
+          <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="btn-theme-toggle">
+          <i class="fas fa-moon"></i> Cambiar Tema
+        </button>
+      </div>
     </header>
     <div class="parallax-container">
       <div class="parallax-bg"></div>
@@ -33,26 +37,6 @@
       </div>
     </div>
     <main>
-      <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <div class="sobre-mi-container">
-          <img
-            src="./images/foto-perfil.jpeg"
-            alt="Foto de Luciano Ballespin"
-            class="foto-perfil"
-          />
-          <p>
-            Hola, mi nombre es <span class="highlight">Luciano Ballespin</span>,
-            un desarrollador web apasionado por crear soluciones innovadoras y
-            eficientes. Tengo experiencia en HTML, CSS, JavaScript y frameworks
-            como React y Bootstrap. Me encanta aprender nuevas tecnologías y
-            mejorar continuamente mis habilidades para poder adaptarme a
-            cualquier desafío y crecer en la programación. En mi tiempo libre,
-            disfruto hacer música y cantar.
-          </p>
-        </div>
-      </section>
-
       <section id="proyectos">
         <h2>Proyectos</h2>
         <div class="proyectos-grid">
@@ -67,7 +51,7 @@
                   Proyecto de videogames realizado en el cursado de rolling
                   code, es una pagina de muestra, simil e-commerse de compra y
                   venta de videojuegos. Tecnologías utilizadas: HTML, CSS,
-                  JavaScript 
+                  JavaScript
                 </p>
               </div>
             </a>
@@ -115,7 +99,25 @@
           </div>
         </div>
       </section>
-
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <div class="sobre-mi-container">
+          <img
+            src="./images/foto-perfil.jpeg"
+            alt="Foto de Luciano Ballespin"
+            class="foto-perfil"
+          />
+          <p>
+            Hola, mi nombre es <span class="highlight">Luciano Ballespin</span>,
+            un desarrollador web apasionado por crear soluciones innovadoras y
+            eficientes. Tengo experiencia en HTML, CSS, JavaScript, frameworks y
+            librerias como React y Bootstrap. Me encanta aprender nuevas
+            tecnologías y mejorar continuamente mis habilidades para poder
+            adaptarme a cualquier desafío y crecer en la programación. En mi
+            tiempo libre, disfruto hacer música y cantar.
+          </p>
+        </div>
+      </section>
       <section id="habilidades">
         <h2>Habilidades</h2>
         <div class="habilidades-grid">
@@ -144,6 +146,27 @@
               style="color: #563d7c; font-size: 3em"
             ></i>
             <p>Bootstrap</p>
+          </div>
+          <div class="habilidad">
+            <i
+              class="fas fa-database"
+              style="color: #47a248; font-size: 3em"
+            ></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="habilidad">
+            <i
+              class="fas fa-database"
+              style="color: #336791; font-size: 3em"
+            ></i>
+            <p>PostgreSQL</p>
+          </div>
+          <div class="habilidad">
+            <i
+              class="fab fa-node-js"
+              style="color: #68a063; font-size: 3em"
+            ></i>
+            <p>Node.js</p>
           </div>
           <!-- Agrega más habilidades aquí -->
         </div>
