@@ -607,8 +607,10 @@ button:hover {
   background: white;
 }
 
+/* Eliminar o modificar el efecto de escala en la imagen */
 .proyecto-card:hover img {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */ /* Eliminar si causa problemas de legibilidad */
+  filter: brightness(1.1); /* Aumentar el brillo en lugar de escalar */
 }
 
 .proyecto-card::after {
