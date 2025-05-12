@@ -499,47 +499,58 @@ footer {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 108px;
+  background-color: var(--bg-light);
+  padding: 13px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
 label {
   font-weight: bold;
+  font-size: 0.9em;
+  color: var(--text-color);
 }
 
 input,
 textarea {
-  padding: 10px;
+  padding: 8px 10px;
+  font-size: 0.9em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1em;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
 }
 
-/* Mejora de los botones */
+textarea {
+  resize: none; /* Evita que el usuario cambie el tamaño del textarea */
+}
+
 button {
   background: var(--accent-color);
-  padding: 5px 10px;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
-  color: #ffffff;
-  font-size: 0.9em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-self: flex-start;
-  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background: #e0a800;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(9, 132, 227, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .proyectos-grid {
@@ -1289,4 +1300,19 @@ body.dark-mode #contacto a:hover {
 .certificaciones li,
 .blog-item h3 {
   margin: 10px 0;
+}
+
+.btn-download-cv {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download-cv:hover {
+  background-color: #0056b3;
 }

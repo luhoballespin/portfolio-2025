@@ -5,14 +5,17 @@ document.addEventListener("scroll", () => {
   parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
 });
 
-document.getElementById("theme-toggle").addEventListener("click", function () {
+const themeToggle = document.getElementById("theme-toggle");
+const currentTheme = localStorage.getItem("theme") || "light";
+
+if (currentTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-  const icon = this.querySelector("i");
-  if (document.body.classList.contains("dark-mode")) {
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-  } else {
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
-  }
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("dark-mode") ? "dark" : "light"
+  );
 });
