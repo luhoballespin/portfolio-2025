@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeBtn = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // Mantener tema al recargar
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
   }

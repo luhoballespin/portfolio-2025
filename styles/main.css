@@ -739,6 +739,30 @@ body.dark-mode #contacto a:hover {
   color: #e0a800;
 }
 
+body.dark-mode #proyectos-en-progreso {
+  background-color: var(--bg-dark);
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode #proyectos-en-progreso h2 {
+  color: #fff;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+body.dark-mode #proyectos-en-progreso .proyecto-card {
+  background: #232323;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+body.dark-mode #proyectos-en-progreso .proyecto-card h3 {
+  color:#fff;
+}
+
+body.dark-mode #proyectos-en-progreso ul li:before {
+  color: var(--accent-color);
+}
+
 /* =========================
    UTILIDADES
    ========================= */
@@ -811,4 +835,164 @@ body.dark-mode #contacto a:hover {
   color: var(--accent-color);
   position: absolute;
   left: 0;
+}
+
+.theme-switch {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.switch-track {
+  width: 52px;
+  height: 26px;
+  background: linear-gradient(90deg, #ffc107 0%, #28a745 100%);
+  border-radius: 26px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.switch-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
+  z-index: 2;
+  transition: opacity 0.3s;
+  color: #fff;
+  pointer-events: none;
+}
+
+.switch-icon.moon {
+  left: 8px;
+  opacity: 1;
+}
+
+.switch-icon.sun {
+  right: 8px;
+  opacity: 0;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: left 0.3s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  z-index: 3;
+}
+
+/* Estado activo (modo oscuro) */
+body.dark-mode .switch-track {
+  background: linear-gradient(90deg, #343a40 0%, #222 100%);
+}
+
+body.dark-mode .switch-thumb {
+  left: 25px;
+  background: #ffc107;
+}
+
+body.dark-mode .switch-icon.moon {
+  opacity: 0;
+}
+
+body.dark-mode .switch-icon.sun {
+  opacity: 1;
+  color: #ffc107;
+}
+
+/* Footer redes sociales */
+footer {
+  background: var(--bg-light);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 24px 0 10px 0;
+  border-top: 1px solid #eaeaea;
+  margin-top: 40px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.footer-link.linkedin { color: #0a66c2; }
+.footer-link.github { color: #24292f; }
+.footer-link.instagram { color: #e4405f; }
+
+.footer-link:hover,
+.footer-link:focus {
+  background: #f5f5f5;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  outline: none;
+}
+
+.footer-link.linkedin:hover { color: #fff; background: #0a66c2; }
+.footer-link.github:hover { color: #fff; background: #24292f; }
+.footer-link.instagram:hover { color: #fff; background: #e4405f; }
+
+footer p {
+  margin: 8px 0 0 0;
+  font-size: 1em;
+  color: inherit;
+}
+
+/* Modo oscuro */
+body.dark-mode footer {
+  background: var(--bg-dark);
+  color: #fff;
+  border-top: 1px solid #333;
+}
+
+body.dark-mode .footer-link {
+  background: transparent;
+}
+
+body.dark-mode .footer-link.linkedin { color: #0a66c2; }
+body.dark-mode .footer-link.github { color: #fff; }
+body.dark-mode .footer-link.instagram { color: #e4405f; }
+
+body.dark-mode .footer-link.linkedin:hover { background: #0a66c2; color: #fff; }
+body.dark-mode .footer-link.github:hover { background: #fff; color: #24292f; }
+body.dark-mode .footer-link.instagram:hover { background: #e4405f; color: #fff; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-social {
+    gap: 18px;
+  }
+  .footer-link {
+    font-size: 1.4em;
+    width: 36px;
+    height: 36px;
+  }
+  footer {
+    padding: 18px 0 8px 0;
+  }
 }
