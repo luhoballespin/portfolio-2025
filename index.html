@@ -33,8 +33,11 @@
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
-        <button id="theme-toggle" class="btn-theme-toggle">
-          <i class="fas fa-moon"></i> Cambiar Tema
+        <button id="theme-toggle" class="btn-theme-toggle" aria-label="Cambiar tema">
+          <span class="icon-container">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </span>
         </button>
       </div>
     </header>
@@ -246,8 +249,9 @@
     </main>
     <footer>
       <p>&copy; 2025 Luciano Ballespin</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+    </footer> 
+    
+    
     <script>
       const form = document.getElementById("contact-form");
       form.addEventListener("submit", (e) => {
@@ -277,5 +281,6 @@
         ]
       }
     </script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>

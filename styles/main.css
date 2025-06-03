@@ -91,12 +91,14 @@ header nav a:focus {
   outline: none;
 }
 
+/* Botón de tema adaptativo */
 .btn-theme-toggle {
+  position: relative;
   margin-left: 32px;
-  padding: 10px 18px;
+  padding: 10px 22px;
   border-radius: 50px;
   border: none;
-  background: linear-gradient(90deg, var(--accent-color) 60%, var(--secondary-color) 100%);
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--secondary-color) 100%);
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -108,19 +110,41 @@ header nav a:focus {
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   outline: none;
   border: 2px solid transparent;
+  overflow: hidden;
 }
 
-.btn-theme-toggle i {
-  font-size: 1.2em;
+.icon-container {
+  position: relative;
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
 }
 
-.btn-theme-toggle:hover,
-.btn-theme-toggle:focus {
-  background: linear-gradient(90deg, var(--secondary-color) 60%, var(--accent-color) 100%);
-  color: #fff;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
-  transform: translateY(-2px) scale(1.04);
-  border: 2px solid var(--accent-color);
+.icon-container .fa-moon,
+.icon-container .fa-sun {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5em;
+  transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.4s;
+}
+
+.icon-container .fa-sun {
+  left: 0;
+  opacity: 0;
+  transform: translateX(-30px) scale(0.7) rotate(-90deg);
+  color: #ffd700;
+}
+
+body.dark-mode .icon-container .fa-moon {
+  opacity: 0;
+  transform: translateX(30px) scale(0.7) rotate(90deg);
+}
+
+body.dark-mode .icon-container .fa-sun {
+  opacity: 1;
+  transform: translateX(0) scale(1) rotate(0deg);
 }
 
 /* =========================
@@ -680,7 +704,9 @@ body.dark-mode header {
   color: var(--text-color);
 }
 body.dark-mode .btn-theme-toggle {
-  color: #ffffff;
+  background: linear-gradient(90deg, #343a40 0%, #222 100%);
+  color: #ffc107;
+  border: 2px solid #ffc107;
 }
 body.dark-mode header h1 {
   color: var(--text-color);
