@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f0f0f0"/>
+    <text x="50%" y="50%" font-family="Arial" font-size="24" text-anchor="middle" fill="#666">
+        Proyecto en Desarrollo
+    </text>
+    <circle cx="200" cy="180" r="30" fill="none" stroke="#666" stroke-width="2">
+        <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 200 180"
+            to="360 200 180"
+            dur="2s"
+            repeatCount="indefinite"/>
+    </circle>
+</svg> 
