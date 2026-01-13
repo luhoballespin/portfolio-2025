@@ -251,15 +251,22 @@
           <p>
             Soy <span class="highlight">Luciano Ballespin</span>, desarrollador web full stack con experiencia en <strong>React, Node.js, MongoDB</strong> y más.<br>
             Me apasiona aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.<br>
-            Actualmente, estoy perfeccionando mis habilidades en <strong>Backend Avanzado</strong> y explorando <strong>GraphQL</strong> y <strong>AWS EC2</strong>.<br>
+            Actualmente, estoy cursando la <strong>Diplomatura en Ecosistemas de Automatización con n8n y Make</strong> en Coderhouse, perfeccionando mis habilidades en <strong>Backend Avanzado</strong> y explorando <strong>GraphQL</strong> y <strong>AWS EC2</strong>.<br>
             Busco oportunidades para aportar valor y seguir desarrollándome en el mundo digital.
           </p>
-          <a
-            href="./docs/LUCIANO BALLESPIN dev 2025.pdf"
-            download
-            class="btn-download-cv"
-            >Descargar CV</a
-          >
+          <div class="cv-dropdown">
+            <button class="btn-download-cv" id="cv-dropdown-btn" aria-label="Descargar CV" aria-haspopup="true" aria-expanded="false">
+              Descargar CV <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="cv-dropdown-menu" id="cv-dropdown-menu">
+              <a href="./docs/Luciano_Ballespin_CV_ES.pdf" download class="cv-dropdown-item">
+                <i class="fas fa-file-pdf"></i> CV en Español
+              </a>
+              <a href="./docs/Luciano_Ballespin_CV_EN.pdf" download class="cv-dropdown-item">
+                <i class="fas fa-file-pdf"></i> CV in English
+              </a>
+            </div>
+          </div>
         </div>
       </section>
       <section id="habilidades">
@@ -309,6 +316,14 @@
             <i class="fas fa-wind"></i>
             <span>Tailwind</span>
           </div>
+          <div class="habilidad habilidad-n8n">
+            <i class="fas fa-code-branch"></i>
+            <span>n8n</span>
+          </div>
+          <div class="habilidad habilidad-make">
+            <i class="fas fa-plug"></i>
+            <span>Make</span>
+          </div>
         </div>
       </section>
 
@@ -331,7 +346,6 @@
             </li>
           </ul>
         </div>
-        <!-- Agrega más experiencias aquí -->
       </section>
 
       <section id="certificaciones">
@@ -340,8 +354,9 @@
           <li>Certificación en Desarrollo Web - Argentina programa 4.0</li>
           <li>Certificación en Desarrollo Web Full Stack - SoyHenry</li>
           <li>Certificación en Desarrollo web Full stack - Rolling Code</li>
-          <li>Certificación en Desarrollo Backend avanzado - CoderHouse [actualmente]</li>
-          <!-- Agrega más certificaciones aquí -->
+          <li>Certificación en Desarrollo Backend avanzado - CoderHouse </li>
+          <li>Certificación en Ecosistemas de Automatización con n8n y Make - CoderHouse [actualmente]</li>
+          
         </ul>
       </section>
 
