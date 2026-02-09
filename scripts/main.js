@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
   });
 
-  // Dropdown del CV
+  // Dropdown del CV 
   function initCVDropdown() {
     const cvDropdown = document.querySelector('.cv-dropdown');
     const cvDropdownBtn = document.getElementById('cv-dropdown-btn');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Toggle del dropdown al hacer clic en el botón
+    // Toggle del dropdown al hacer clic en el botón para descargar el CV
     cvDropdownBtn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Cerrar el dropdown al hacer clic fuera
+    // Cerrar el dropdown al hacer clic fuera 
     document.addEventListener('click', function (e) {
       if (cvDropdown && !cvDropdown.contains(e.target)) {
         cvDropdown.classList.remove('active');
@@ -49,13 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Cerrar el dropdown al presionar Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && cvDropdown && cvDropdown.classList.contains('active')) {
-        cvDropdown.classList.remove('active');
-        cvDropdownBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
+
   }
 
   // Inicializar el dropdown
