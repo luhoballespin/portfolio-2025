@@ -4,15 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-color: #071318;
-  --secondary-color: #28a745;
-  --accent-color: #ffc107;
-  --text-color: #343a40;
+  --primary-color: #0d1b24;
+  --secondary-color: #1a7f37;
+  --accent-color: #d4a012;
+  --text-color: #2d3748;
   --bg-light: #ffffff;
   --bg-dark: #f8f9fa;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.144);
+  --white: #ffffff;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius: 12px;
+  --radius-lg: 16px;
 }
 
 body {
@@ -94,64 +98,6 @@ header nav a:focus {
   background: var(--accent-color);
   color: #fff;
   outline: none;
-}
-
-/* Botón de tema adaptativo */
-.btn-theme-toggle {
-  position: relative;
-  margin-left: 32px;
-  padding: 10px 22px;
-  border-radius: 50px;
-  border: none;
-  background: linear-gradient(90deg,
-      var(--accent-color) 0%,
-      var(--secondary-color) 100%);
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-  font-size: 1.15em;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  outline: none;
-  border: 2px solid transparent;
-  overflow: hidden;
-}
-
-.icon-container {
-  position: relative;
-  width: 36px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-}
-
-.icon-container .fa-moon,
-.icon-container .fa-sun {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.5em;
-  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s;
-}
-
-.icon-container .fa-sun {
-  left: 0;
-  opacity: 0;
-  transform: translateX(-30px) scale(0.7) rotate(-90deg);
-  color: #ffd700;
-}
-
-body.dark-mode .icon-container .fa-moon {
-  opacity: 0;
-  transform: translateX(30px) scale(0.7) rotate(90deg);
-}
-
-body.dark-mode .icon-container .fa-sun {
-  opacity: 1;
-  transform: translateX(0) scale(1) rotate(0deg);
 }
 
 /* =========================
@@ -360,6 +306,150 @@ section p {
 /* =========================
    PROYECTOS
    ========================= */
+/* Ventanas de categorías (página principal) */
+.proyectos-intro {
+  margin: 0 0 1.5rem 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.proyectos-ventanas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ventana-categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: var(--bg-light);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  min-height: 180px;
+  position: relative;
+}
+
+.ventana-categoria:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-color);
+}
+
+.ventana-icono {
+  font-size: 2.2em;
+  color: var(--accent-color);
+}
+
+.ventana-landings .ventana-icono {
+  color: var(--secondary-color);
+}
+
+.ventana-backend .ventana-icono {
+  color: #6f42c1;
+}
+
+.ventana-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.ventana-desc {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  text-align: center;
+}
+
+.ventana-flecha {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1em;
+  opacity: 0.6;
+  transition: transform 0.3s ease;
+}
+
+.ventana-categoria:hover .ventana-flecha {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+body.dark-mode .ventana-categoria {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--bg-dark);
+}
+
+body.dark-mode .ventana-categoria:hover {
+  border-color: var(--accent-color);
+}
+
+body.dark-mode .ventana-titulo {
+  color: var(--text-color);
+}
+
+body.dark-mode .ventana-desc {
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+/* Páginas de listado de proyectos (landing-pages.html, proyectos-backend.html) */
+.pagina-proyectos {
+  max-width: 1000px;
+}
+
+.link-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.link-volver:hover {
+  color: var(--accent-color);
+}
+
+.pagina-proyectos h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.pagina-proyectos h2 i {
+  color: var(--accent-color);
+}
+
+.pagina-proyectos-desc {
+  margin: 0 0 1.5rem 0;
+  color: var(--text-color);
+  font-size: 0.98rem;
+}
+
+body.dark-mode .link-volver {
+  color: #5dd39e;
+}
+
+body.dark-mode .link-volver:hover {
+  color: var(--accent-color);
+}
+
 .proyectos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -827,12 +917,6 @@ body.dark-mode .cv-dropdown-item:hover {
     gap: 10px;
   }
 
-  .btn-theme-toggle {
-    font-size: 0.98em;
-    padding: 7px 10px;
-    margin-left: 10px;
-  }
-
   .parallax-container {
     height: 60vh;
     min-height: 300px;
@@ -850,6 +934,17 @@ body.dark-mode .cv-dropdown-item:hover {
 
   .profession {
     font-size: 1.2em;
+  }
+
+  .proyectos-ventanas {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .ventana-categoria {
+    min-height: 160px;
+    padding: 1.5rem 1rem;
   }
 
   .proyectos-grid {
@@ -917,14 +1012,6 @@ body.dark-mode .cv-dropdown-item:hover {
     gap: 6px;
     justify-content: center;
     width: 100%;
-  }
-
-  .btn-theme-toggle {
-    font-size: 0.95em;
-    padding: 6px 8px;
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
   }
 
   .sobre-mi-container img,
@@ -1035,18 +1122,11 @@ body.dark-mode header {
   color: var(--text-color);
 }
 
-body.dark-mode .btn-theme-toggle {
-  background: linear-gradient(90deg, #343a40 0%, #222 100%);
-  color: #ffc107;
-  border: 2px solid #ffc107;
-}
-
 body.dark-mode header h1 {
   color: var(--text-color);
 }
 
 body.dark-mode main h2 {
-  background: var(--primary-color);
   color: var(--text-color);
 }
 
@@ -1070,14 +1150,6 @@ body.dark-mode nav a:hover {
 body.dark-mode footer {
   background: var(--primary-color);
   color: var(--text-color);
-}
-
-body.dark-mode #contacto ul li a {
-  color: var(--text-color);
-}
-
-body.dark-mode #contacto a:hover {
-  color: #e0a800;
 }
 
 body.dark-mode #proyectos-en-progreso {
