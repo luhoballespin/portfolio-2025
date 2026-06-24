@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portafolio de Luciano Ballespin, desarrollador web full stack. Proyectos, habilidades y experiencia en HTML, CSS, JavaScript, React y más."
+      content="Luciano Ballespin — Backend & Automation Developer especializado en Node.js, MongoDB, PostgreSQL, AWS y automatización empresarial con n8n y Make."
     />
     <meta
       name="keywords"
-      content="portafolio, desarrollador web, full stack, HTML, CSS, JavaScript, React, proyectos web"
+      content="Backend Developer, Node.js Developer, Automation Developer, MongoDB Developer, AWS Developer, API Development, PostgreSQL, Express, REST API, n8n, Make, automatización, WebSockets, JWT"
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luciano Ballespin | Desarrollador Web Full Stack | Portafolio</title>
+    <meta name="author" content="Luciano Ballespin" />
+    <meta property="og:title" content="Luciano Ballespin | Backend & Automation Developer" />
+    <meta property="og:description" content="Backend Developer especializado en Node.js, MongoDB, PostgreSQL, AWS y automatización empresarial." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-2025luchodev.netlify.app/" />
+    <title>Luciano Ballespin | Backend & Automation Developer</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link
       rel="stylesheet"
@@ -23,15 +28,21 @@
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <h1>Bienvenido a mi Portafolio</h1>
-        <nav>
+
+    <!-- ═══════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════ -->
+    <header id="site-header">
+      <div class="container header-inner">
+        <a href="#inicio" class="header-logo" aria-label="Inicio">
+          LB<span class="logo-dot">.</span>
+        </a>
+        <nav aria-label="Navegación principal">
           <ul>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#especialidades">Especialidades</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto" class="nav-cta">Contacto</a></li>
           </ul>
         </nav>
         <button id="theme-toggle" class="theme-switch" aria-label="Cambiar tema">
@@ -43,242 +54,602 @@
         </button>
       </div>
     </header>
-    <div class="parallax-container">
-      <div class="parallax-bg"></div>
-      <div class="hero-content">
-        <h1 class="name-title">Luciano Ballespin</h1>
-        <p class="profession">Desarrollador Web Full Stack</p>
-        <p class="hero-tagline">Apasionado por crear soluciones digitales que suman valor y aprendizaje constante.</p>
-      </div>
-    </div>
-    <main>
-      <section id="proyectos">
-        <h2>Proyectos</h2>
-        <p class="proyectos-intro">Elegí una categoría para ver todos los proyectos.</p>
-        <div class="proyectos-ventanas">
-          <a href="landing-pages.html" class="ventana-categoria ventana-landings">
-            <span class="ventana-icono"><i class="fas fa-window-maximize" aria-hidden="true"></i></span>
-            <span class="ventana-titulo">Landing pages</span>
-            <span class="ventana-desc">Ver landings y proyectos frontend</span>
-            <span class="ventana-flecha"><i class="fas fa-arrow-right"></i></span>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-grid-pattern" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Disponible para nuevas oportunidades
+        </div>
+        <h1 class="hero-name">Luciano Ballespin</h1>
+        <p class="hero-title">Backend &amp; Automation Developer</p>
+        <p class="hero-subtitle">
+          Desarrollo APIs escalables, automatizaciones inteligentes e integración de sistemas
+          para empresas utilizando Node.js, MongoDB, PostgreSQL, AWS y herramientas No-Code.
+        </p>
+        <div class="hero-ctas">
+          <a href="#proyectos" class="btn btn-primary">
+            Ver proyectos <i class="fas fa-arrow-down" aria-hidden="true"></i>
           </a>
-          <a href="proyectos-backend.html" class="ventana-categoria ventana-backend">
-            <span class="ventana-icono"><i class="fas fa-server" aria-hidden="true"></i></span>
-            <span class="ventana-titulo">Páginas con backend</span>
-            <span class="ventana-desc">Ver proyectos full stack</span>
-            <span class="ventana-flecha"><i class="fas fa-arrow-right"></i></span>
+          <a href="#contacto" class="btn btn-ghost">
+            Contactarme <i class="fas fa-envelope" aria-hidden="true"></i>
           </a>
         </div>
+        <div class="hero-stack" aria-label="Stack tecnológico principal">
+          <span>Node.js</span>
+          <span>Express</span>
+          <span>MongoDB</span>
+          <span>PostgreSQL</span>
+          <span>AWS EC2</span>
+          <span>n8n</span>
+        </div>
+      </div>
+      <a href="#especialidades" class="hero-scroll-hint" aria-label="Scroll hacia abajo">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════ -->
+    <main>
+
+      <!-- ESPECIALIDADES -->
+      <section id="especialidades" class="section section-light reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Stack técnico</span>
+            <h2>Especialidades</h2>
+            <p class="section-desc">Tecnologías y herramientas con las que construyo soluciones reales.</p>
+          </div>
+          <div class="especialidades-grid">
+
+            <div class="esp-card reveal-child">
+              <div class="esp-icon-wrap esp-backend">
+                <i class="fas fa-server" aria-hidden="true"></i>
+              </div>
+              <h3>Backend Development</h3>
+              <ul class="esp-list">
+                <li><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</li>
+                <li><i class="fas fa-route" aria-hidden="true"></i> Express</li>
+                <li><i class="fas fa-exchange-alt" aria-hidden="true"></i> REST APIs</li>
+                <li><i class="fas fa-key" aria-hidden="true"></i> JWT Auth</li>
+                <li><i class="fas fa-database" aria-hidden="true"></i> MongoDB Atlas</li>
+                <li><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</li>
+              </ul>
+            </div>
+
+            <div class="esp-card esp-card--featured reveal-child">
+              <div class="esp-icon-wrap esp-cloud">
+                <i class="fab fa-aws" aria-hidden="true"></i>
+              </div>
+              <h3>Cloud &amp; DevOps</h3>
+              <ul class="esp-list">
+                <li><i class="fab fa-aws" aria-hidden="true"></i> AWS EC2</li>
+                <li><i class="fas fa-server" aria-hidden="true"></i> Nginx</li>
+                <li><i class="fas fa-cogs" aria-hidden="true"></i> PM2</li>
+                <li><i class="fab fa-github" aria-hidden="true"></i> GitHub</li>
+                <li><i class="fas fa-plug" aria-hidden="true"></i> WebSockets</li>
+                <li><i class="fas fa-rocket" aria-hidden="true"></i> Deploy producción</li>
+              </ul>
+            </div>
+
+            <div class="esp-card reveal-child">
+              <div class="esp-icon-wrap esp-automation">
+                <i class="fas fa-robot" aria-hidden="true"></i>
+              </div>
+              <h3>Automation</h3>
+              <ul class="esp-list">
+                <li><i class="fas fa-code-branch" aria-hidden="true"></i> n8n</li>
+                <li><i class="fas fa-plug" aria-hidden="true"></i> Make</li>
+                <li><i class="fas fa-webhook" aria-hidden="true"></i> Webhooks</li>
+                <li><i class="fas fa-link" aria-hidden="true"></i> Integraciones API</li>
+                <li><i class="fas fa-brain" aria-hidden="true"></i> IA en flujos</li>
+                <li><i class="fas fa-industry" aria-hidden="true"></i> Procesos empresariales</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
       </section>
-      <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <div class="sobre-mi-container">
-          <img
-            src="./images/foto-perfil.jpeg"
-            alt="Foto de Luciano Ballespin"
-            class="foto-perfil"
-          />
-          <p>
-            Soy <span class="highlight">Luciano Ballespin</span>, desarrollador web full stack con experiencia en <strong>React, Node.js, MongoDB</strong> y más.<br>
-            Me apasiona aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.<br>
-            Actualmente, estoy cursando la <strong>Diplomatura en Ecosistemas de Automatización con n8n y Make</strong> en Coderhouse, perfeccionando mis habilidades en <strong>Backend Avanzado</strong> y explorando <strong>GraphQL</strong> y <strong>AWS EC2</strong>.<br>
-            Busco oportunidades para aportar valor y seguir desarrollándome en el mundo digital.
-          </p>
-          <div class="cv-dropdown">
-            <button class="btn-download-cv" id="cv-dropdown-btn" aria-label="Descargar CV" aria-haspopup="true" aria-expanded="false">
-              Descargar CV <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="cv-dropdown-menu" id="cv-dropdown-menu">
-              <a href="./docs/Luciano_Ballespin_CV_ES.pdf" download class="cv-dropdown-item">
-                <i class="fas fa-file-pdf"></i> CV en Español
-              </a>
-              <a href="./docs/Luciano_Ballespin_CV_EN.pdf" download class="cv-dropdown-item">
-                <i class="fas fa-file-pdf"></i> CV in English
-              </a>
+
+      <!-- PROYECTOS DESTACADOS -->
+      <section id="proyectos" class="section section-alt reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Trabajo</span>
+            <h2>Proyectos Destacados</h2>
+            <p class="section-desc">Soluciones backend y automatización construidas para casos de uso reales.</p>
+          </div>
+
+          <div class="proyectos-pro-grid">
+
+            <article class="project-card reveal-child">
+              <div class="project-card-top">
+                <div class="project-icon-wrap project-icon--ecommerce">
+                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                </div>
+                <a href="proyectos-backend.html" class="project-ext-link" aria-label="Ver proyecto E-commerce Backend">
+                  <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </div>
+              <h3>E-commerce Backend</h3>
+              <p>API REST completa para plataforma de comercio electrónico con autenticación JWT, sistema de roles, gestión de carrito y productos en MongoDB Atlas.</p>
+              <div class="project-tags">
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>JWT</span>
+                <span>MongoDB</span>
+                <span>REST API</span>
+              </div>
+            </article>
+
+            <article class="project-card project-card--highlight reveal-child">
+              <div class="project-card-top">
+                <div class="project-icon-wrap project-icon--inventory">
+                  <i class="fas fa-boxes-stacked" aria-hidden="true"></i>
+                </div>
+                <a href="proyectos-backend.html" class="project-ext-link" aria-label="Ver proyecto Gestión de Inventario">
+                  <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </div>
+              <h3>Sistema de Gestión de Inventario</h3>
+              <p>Backend con PostgreSQL para gestión de stock empresarial. Filtros avanzados, paginación eficiente y endpoints optimizados para consultas de alto volumen.</p>
+              <div class="project-tags">
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>Express</span>
+                <span>Filtros</span>
+                <span>Paginación</span>
+              </div>
+            </article>
+
+            <article class="project-card reveal-child">
+              <div class="project-card-top">
+                <div class="project-icon-wrap project-icon--automation">
+                  <i class="fas fa-robot" aria-hidden="true"></i>
+                </div>
+                <a href="proyectos-backend.html" class="project-ext-link" aria-label="Ver proyecto Automatización Empresarial">
+                  <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </div>
+              <h3>Automatización Empresarial</h3>
+              <p>Flujos de automatización con n8n integrando múltiples APIs y procesamiento con IA. Elimina tareas manuales repetitivas y optimiza procesos de negocio.</p>
+              <div class="project-tags">
+                <span>n8n</span>
+                <span>Make</span>
+                <span>APIs</span>
+                <span>IA</span>
+                <span>Webhooks</span>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="proyectos-more">
+            <a href="proyectos-backend.html" class="btn btn-outline-dark">
+              Ver todos los proyectos <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE MÍ -->
+      <section id="sobre-mi" class="section section-light reveal">
+        <div class="container">
+          <div class="sobre-mi-layout">
+            <div class="sobre-mi-img-col">
+              <div class="foto-perfil-wrap">
+                <img
+                  src="./images/foto-perfil.jpeg"
+                  alt="Foto de perfil de Luciano Ballespin"
+                  class="foto-perfil"
+                  loading="lazy"
+                  width="240"
+                  height="240"
+                />
+                <div class="foto-badge">
+                  <i class="fab fa-node-js" aria-hidden="true"></i> Node.js Dev
+                </div>
+              </div>
+            </div>
+            <div class="sobre-mi-content-col">
+              <span class="section-tag">Sobre mí</span>
+              <h2>Backend Developer con visión de negocio</h2>
+              <p>
+                Soy <strong>Luciano Ballespin</strong>, Backend Developer especializado en
+                <strong>Node.js, MongoDB, PostgreSQL y AWS</strong>. Me enfoco en construir APIs
+                robustas, sistemas escalables y automatizaciones que resuelven problemas reales.
+              </p>
+              <p>
+                Cuento con formación Full Stack completa y estoy especializándome en la
+                <strong>Diplomatura en Ecosistemas de Automatización con n8n y Make</strong>,
+                combinando desarrollo backend avanzado con herramientas No-Code para entregar
+                soluciones de mayor impacto.
+              </p>
+              <div class="sobre-mi-stats">
+                <div class="stat-item">
+                  <span class="stat-num">3+</span>
+                  <span class="stat-label">Años de experiencia</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-num">10+</span>
+                  <span class="stat-label">Proyectos completados</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-num">5+</span>
+                  <span class="stat-label">Certificaciones</span>
+                </div>
+              </div>
+              <div class="cv-dropdown">
+                <button
+                  class="btn-download-cv"
+                  id="cv-dropdown-btn"
+                  aria-label="Descargar CV"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Descargar CV <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="cv-dropdown-menu" id="cv-dropdown-menu" role="menu">
+                  <a href="./docs/Luciano_Ballespin_CV_ES.pdf" download class="cv-dropdown-item" role="menuitem">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i> CV en Español
+                  </a>
+                  <a href="./docs/Luciano_Ballespin_CV_EN.pdf" download class="cv-dropdown-item" role="menuitem">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i> CV in English
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="habilidades">
-        <h2>Habilidades</h2>
-        <div class="habilidades-grid">
-          <div class="habilidad habilidad-html">
-            <i class="fab fa-html5"></i>
-            <span>HTML</span>
+
+      <!-- EXPERIENCIA EN NEGOCIOS -->
+      <section id="experiencia-negocios" class="section section-alt reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Trayectoria</span>
+            <h2>Experiencia en Negocios</h2>
           </div>
-          <div class="habilidad habilidad-css">
-            <i class="fab fa-css3-alt"></i>
-            <span>CSS</span>
-          </div>
-          <div class="habilidad habilidad-js">
-            <i class="fab fa-js-square"></i>
-            <span>JavaScript</span>
-          </div>
-          <div class="habilidad habilidad-react">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-          </div>
-          <div class="habilidad habilidad-node">
-            <i class="fab fa-node-js"></i>
-            <span>Node.js</span>
-          </div>
-          <div class="habilidad habilidad-mongo">
-            <i class="fas fa-database"></i>
-            <span>MongoDB</span>
-          </div>
-          <div class="habilidad habilidad-graphql">
-            <i class="fas fa-project-diagram"></i>
-            <span>GraphQL</span>
-          </div>
-          <div class="habilidad habilidad-aws">
-            <i class="fab fa-aws"></i>
-            <span>AWS EC2</span>
-          </div>
-          <div class="habilidad habilidad-bootstrap">
-            <i class="fab fa-bootstrap"></i>
-            <span>Bootstrap</span>
-          </div>
-          <div class="habilidad habilidad-handlebars">
-            <i class="fas fa-code"></i>
-            <span>Handlebars</span>
-          </div>
-          <div class="habilidad habilidad-tailwind">
-            <i class="fas fa-wind"></i>
-            <span>Tailwind</span>
-          </div>
-          <div class="habilidad habilidad-n8n">
-            <i class="fas fa-code-branch"></i>
-            <span>n8n</span>
-          </div>
-          <div class="habilidad habilidad-make">
-            <i class="fas fa-plug"></i>
-            <span>Make</span>
+          <div class="negocios-layout">
+            <div class="negocios-highlight-col">
+              <blockquote class="negocios-quote">
+                Además de mi experiencia técnica, cuento con trayectoria en gestión comercial B2B,
+                presupuestos técnicos, coordinación de proyectos y optimización de procesos
+                empresariales. Esta combinación me permite desarrollar soluciones tecnológicas
+                alineadas con necesidades reales de negocio.
+              </blockquote>
+            </div>
+            <div class="negocios-items-col">
+              <div class="negocio-item reveal-child">
+                <div class="negocio-icon">
+                  <i class="fas fa-handshake" aria-hidden="true"></i>
+                </div>
+                <div class="negocio-text">
+                  <h4>Gestión Comercial B2B</h4>
+                  <p>Trato con clientes empresariales, negociación y cierre de acuerdos comerciales en entornos de alta demanda.</p>
+                </div>
+              </div>
+              <div class="negocio-item reveal-child">
+                <div class="negocio-icon">
+                  <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+                </div>
+                <div class="negocio-text">
+                  <h4>Presupuestos Técnicos</h4>
+                  <p>Elaboración y análisis de propuestas técnico-económicas para proyectos de desarrollo de software.</p>
+                </div>
+              </div>
+              <div class="negocio-item reveal-child">
+                <div class="negocio-icon">
+                  <i class="fas fa-diagram-project" aria-hidden="true"></i>
+                </div>
+                <div class="negocio-text">
+                  <h4>Coordinación de Proyectos</h4>
+                  <p>Gestión de entregables y comunicación entre equipos técnicos y stakeholders del negocio.</p>
+                </div>
+              </div>
+              <div class="negocio-item reveal-child">
+                <div class="negocio-icon">
+                  <i class="fas fa-chart-line" aria-hidden="true"></i>
+                </div>
+                <div class="negocio-text">
+                  <h4>Optimización de Procesos</h4>
+                  <p>Identificación y automatización de flujos operativos para reducir costos y aumentar eficiencia.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="experiencia">
-        <h2>Experiencia</h2>
-        <div class="experiencia-item">
-          <h3>Desarrollador Web en Empresa Santa Cruz SRL</h3>
-          <p><strong>Período:</strong> Mayo 2021 - marzo 2022</p>
-          <p>Responsabilidades y logros:</p>
-          <ul>
-            <li>
-              Desarrollo de landing page con HTML, CSS y JavaScript.
-            </li>
-            <li>
-              Trabajé en el paginado y secciones correspondientes a la empresa.
-            </li>
-            <li>
-              Diseño realizado a través de referencias y necesidades del cliente.
-            </li>
-          </ul>
+      <!-- HABILIDADES -->
+      <section id="habilidades" class="section section-light reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Tecnologías</span>
+            <h2>Stack Completo</h2>
+            <p class="section-desc">Todas las herramientas de mi ecosistema de trabajo.</p>
+          </div>
+          <div class="habilidades-grid">
+            <div class="habilidad habilidad-node reveal-child">
+              <i class="fab fa-node-js" aria-hidden="true"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="habilidad habilidad-js reveal-child">
+              <i class="fab fa-js-square" aria-hidden="true"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="habilidad habilidad-mongo reveal-child">
+              <i class="fas fa-database" aria-hidden="true"></i>
+              <span>MongoDB</span>
+            </div>
+            <div class="habilidad habilidad-postgres reveal-child">
+              <i class="fas fa-database" aria-hidden="true"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="habilidad habilidad-aws reveal-child">
+              <i class="fab fa-aws" aria-hidden="true"></i>
+              <span>AWS EC2</span>
+            </div>
+            <div class="habilidad habilidad-n8n reveal-child">
+              <i class="fas fa-code-branch" aria-hidden="true"></i>
+              <span>n8n</span>
+            </div>
+            <div class="habilidad habilidad-make reveal-child">
+              <i class="fas fa-plug" aria-hidden="true"></i>
+              <span>Make</span>
+            </div>
+            <div class="habilidad habilidad-react reveal-child">
+              <i class="fab fa-react" aria-hidden="true"></i>
+              <span>React</span>
+            </div>
+            <div class="habilidad habilidad-graphql reveal-child">
+              <i class="fas fa-project-diagram" aria-hidden="true"></i>
+              <span>GraphQL</span>
+            </div>
+            <div class="habilidad habilidad-html reveal-child">
+              <i class="fab fa-html5" aria-hidden="true"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="habilidad habilidad-css reveal-child">
+              <i class="fab fa-css3-alt" aria-hidden="true"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="habilidad habilidad-github reveal-child">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span>GitHub</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="certificaciones">
-        <h2>Certificaciones</h2>
-        <ul>
-          <li>Certificación en Desarrollo Web — Argentina Programa 4.0</li>
-          <li>Certificación en Desarrollo Web Full Stack — SoyHenry</li>
-          <li>Certificación en Desarrollo Web Full Stack — Rolling Code</li>
-          <li>Certificación en Desarrollo Backend Avanzado — Coderhouse</li>
-          <li>Certificación en Ecosistemas de Automatización con n8n y Make — Coderhouse (en curso)</li>
-        </ul>
+      <!-- EXPERIENCIA LABORAL Y CERTIFICACIONES -->
+      <section id="experiencia" class="section section-alt reveal">
+        <div class="container">
+          <div class="exp-cert-layout">
+
+            <div class="exp-col">
+              <span class="section-tag">Laboral</span>
+              <h2>Experiencia</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot" aria-hidden="true"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-period">Mayo 2021 — Marzo 2022</span>
+                    <h3>Desarrollador Web</h3>
+                    <p class="timeline-company">Empresa Santa Cruz SRL</p>
+                    <ul class="timeline-list">
+                      <li>Desarrollo de landing page corporativa con HTML, CSS y JavaScript.</li>
+                      <li>Diseño basado en necesidades del cliente y análisis de referencias.</li>
+                      <li>Implementación de secciones y navegación completa del sitio.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cert-col">
+              <span class="section-tag">Formación</span>
+              <h2>Certificaciones</h2>
+              <ul class="cert-list">
+                <li class="cert-item">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                  <div>
+                    <strong>Ecosistemas de Automatización con n8n y Make</strong>
+                    <span>Coderhouse — En curso</span>
+                  </div>
+                </li>
+                <li class="cert-item">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                  <div>
+                    <strong>Backend Avanzado</strong>
+                    <span>Coderhouse</span>
+                  </div>
+                </li>
+                <li class="cert-item">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                  <div>
+                    <strong>Desarrollo Web Full Stack</strong>
+                    <span>SoyHenry</span>
+                  </div>
+                </li>
+                <li class="cert-item">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                  <div>
+                    <strong>Desarrollo Web Full Stack</strong>
+                    <span>Rolling Code</span>
+                  </div>
+                </li>
+                <li class="cert-item">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                  <div>
+                    <strong>Desarrollo Web</strong>
+                    <span>Argentina Programa 4.0</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
       </section>
 
-      <section id="valores">
-        <h2>Valores</h2>
-        <ul class="valores-list">
-          <li>Compromiso con el aprendizaje continuo</li>
-          <li>Trabajo en equipo y comunicación</li>
-          <li>Adaptabilidad y resolución de problemas</li>
-          <li>Responsabilidad y ética profesional</li>
-        </ul>
+      <!-- CONTACTO -->
+      <section id="contacto" class="section section-light reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Hablemos</span>
+            <h2>Contacto</h2>
+            <p class="section-desc">¿Tenés un proyecto o una oportunidad laboral? Escribime.</p>
+          </div>
+          <div class="contacto-layout">
+            <div class="contacto-info">
+              <p class="contacto-text">
+                Estoy disponible para posiciones de <strong>Backend Developer</strong> o
+                <strong>Automation Developer</strong>. También trabajo en proyectos freelance
+                de integración de sistemas y automatización empresarial.
+              </p>
+              <div class="contacto-links">
+                <a
+                  href="https://www.linkedin.com/in/luciano-ballespin-081233221/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contacto-social"
+                >
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href="https://github.com/luhoballespin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contacto-social"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+            <form
+              action="https://formspree.io/f/xanqjvgz"
+              method="POST"
+              id="contact-form"
+              novalidate
+            >
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Tu nombre"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Contame sobre tu proyecto u oportunidad..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                Enviar mensaje <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
       </section>
 
-      <section id="contacto">
-        <h2>Contacto</h2>
-        <p>
-          Si deseas ponerte en contacto conmigo, completa el siguiente
-          formulario o sígueme en mis redes sociales.
-        </p>
-        <form
-          action="https://formspree.io/f/xanqjvgz"
-          method="POST"
-          id="contact-form"
-        >
-          <label for="name">Nombre:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Tu nombre"
-            required
-          />
-
-          <label for="email">Correo Electrónico:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Tu correo electrónico"
-            required
-          />
-
-          <label for="message">Mensaje:</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="Escribe tu mensaje aquí..."
-            required
-          ></textarea>
-
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
     </main>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
     <footer>
-      <div class="footer-social">
-<a href="https://www.linkedin.com/in/luciano-ballespin-081233221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-link linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://github.com/luhoballespin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link github">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://instagram.com/luciano.ballespin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-link instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="header-logo">LB<span class="logo-dot">.</span></span>
+          <p>Backend &amp; Automation Developer</p>
+        </div>
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/in/luciano-ballespin-081233221/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="footer-link linkedin"
+          >
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://github.com/luhoballespin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="footer-link github"
+          >
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://instagram.com/luciano.ballespin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="footer-link instagram"
+          >
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; 2025 Luciano Ballespin. Todos los derechos reservados.</p>
       </div>
-      <p>&copy; 2025 Luciano Ballespin</p>
-      <p class="footer-motivation">¿Listo para crear algo increíble juntos?</p>
-    </footer> 
-    
-    
+    </footer>
+
+    <!-- Scripts -->
     <script>
       const form = document.getElementById("contact-form");
       form.addEventListener("submit", (e) => {
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
-
         if (!name || !email || !message) {
           e.preventDefault();
-          alert("Por favor, completa todos los campos.");
+          alert("Por favor, completá todos los campos.");
         }
       });
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Person",
         "name": "Luciano Ballespin",
-        "jobTitle": "Desarrollador Web Full Stack",
+        "jobTitle": "Backend & Automation Developer",
         "url": "https://portfolio-2025luchodev.netlify.app/",
         "image": "https://portfolio-2025luchodev.netlify.app/images/foto-perfil.jpeg",
-        "description": "Portafolio de Luciano Ballespin, desarrollador web full stack. Proyectos, habilidades y experiencia en HTML, CSS, JavaScript, React y más.",
+        "description": "Backend Developer especializado en Node.js, MongoDB, PostgreSQL, AWS y automatización empresarial con n8n y Make.",
+        "knowsAbout": ["Node.js", "Express", "MongoDB", "PostgreSQL", "AWS EC2", "REST API", "JWT", "n8n", "Make", "WebSockets", "Backend Development", "API Development"],
         "sameAs": [
           "https://github.com/luhoballespin",
           "https://instagram.com/luciano.ballespin",
@@ -286,6 +657,7 @@
         ]
       }
     </script>
+
     <script src="scripts/main.js"></script>
   </body>
 </html>

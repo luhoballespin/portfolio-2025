@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta name="description" content="Proyectos con backend de Luciano Ballespin - Node.js, MongoDB, APIs." />
-    <meta name="keywords" content="backend, Node.js, MongoDB, full stack, portafolio" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Páginas con backend | Luciano Ballespin - Portafolio</title>
+    <meta
+      name="description"
+      content="Proyectos backend de Luciano Ballespin — Node.js, MongoDB, PostgreSQL, APIs REST, autenticación JWT y automatización empresarial."
+    />
+    <meta
+      name="keywords"
+      content="Backend Developer, Node.js, MongoDB, PostgreSQL, JWT, REST API, automatización, n8n"
+    />
+    <title>Proyectos Backend | Luciano Ballespin</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link
       rel="stylesheet"
@@ -17,16 +23,18 @@
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <h1>Bienvenido a mi Portafolio</h1>
-        <nav>
+
+    <header id="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="header-logo" aria-label="Volver al inicio">
+          LB<span class="logo-dot">.</span>
+        </a>
+        <nav aria-label="Navegación principal">
           <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+            <li><a href="index.html#especialidades">Especialidades</a></li>
             <li><a href="index.html#proyectos">Proyectos</a></li>
-            <li><a href="index.html#habilidades">Habilidades</a></li>
-            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+            <li><a href="index.html#contacto" class="nav-cta">Contacto</a></li>
           </ul>
         </nav>
         <button id="theme-toggle" class="theme-switch" aria-label="Cambiar tema">
@@ -38,25 +46,26 @@
         </button>
       </div>
     </header>
-    <main>
-      <section class="pagina-proyectos">
+
+    <main class="subpage-main">
+      <section class="pagina-proyectos reveal">
         <a href="index.html#proyectos" class="link-volver">
-          <i class="fas fa-arrow-left"></i> Volver a Proyectos
+          <i class="fas fa-arrow-left" aria-hidden="true"></i> Volver a Proyectos
         </a>
-        <h2><i class="fas fa-server"></i> Páginas con backend</h2>
-        <p class="pagina-proyectos-desc">Proyectos full stack con servidor, base de datos y APIs.</p>
+        <h2><i class="fas fa-server" aria-hidden="true"></i> Proyectos Backend</h2>
+        <p class="pagina-proyectos-desc">Proyectos full stack con servidor, base de datos y APIs REST.</p>
+
         <div class="proyectos-grid">
           <div class="proyecto-card">
-            <a href="https://tienda-back-8pax.onrender.com" target="_blank">
+            <a href="https://tienda-back-8pax.onrender.com" target="_blank" rel="noopener noreferrer">
               <div class="imagen-container">
-                <img src="./images/carritonvo.png" alt="Tienda Backend" />
+                <img src="./images/carritonvo.png" alt="Tienda Backend — E-commerce con Node.js y MongoDB" loading="lazy" />
               </div>
               <div class="contenido-card">
                 <h3>Tienda Backend</h3>
                 <p>
                   <strong>Desafío:</strong> Desarrollar un sistema e-commerce con gestión de productos y carrito.<br>
-                  <strong>Mi aporte:</strong> Implementación de CRUD completo, conexión con MongoDB Atlas y desarrollo de vistas con Handlebars.<br>
-                  <strong>Aprendizaje:</strong> Profundicé en backend avanzado y arquitectura de aplicaciones.<br>
+                  <strong>Stack:</strong> CRUD completo, MongoDB Atlas y vistas con Handlebars.<br>
                   <span class="tech-badge">Node.js</span>
                   <span class="tech-badge">MongoDB</span>
                   <span class="tech-badge">Handlebars</span>
@@ -73,60 +82,74 @@
           <div class="proyectos-grid">
             <div class="proyecto-card">
               <div class="imagen-container">
-                <img src="./images/construccion.avif" alt="Proyecto en desarrollo" />
+                <img src="./images/construccion.avif" alt="Sistema de ventas agro — en desarrollo" loading="lazy" />
               </div>
               <div class="contenido-card">
-                <a href="https://github.com/luhoballespin/agrogestion.git" target="_blank">
-                  <h3>Sistema de ventas agro <br> React | Node.js | GraphQL | MongoDB</h3>
+                <a href="https://github.com/luhoballespin/agrogestion.git" target="_blank" rel="noopener noreferrer">
+                  <h3>Sistema de ventas agro</h3>
                   <p>
-                    Desarrollo de una plataforma de comercio electrónico completa con:
+                    Plataforma de comercio electrónico con:
                     <ul>
                       <li>Autenticación de usuarios</li>
                       <li>Cotizaciones de cereales</li>
-                      <li>Apis de tipo de cambio</li>
+                      <li>APIs de tipo de cambio</li>
                       <li>Panel de administración</li>
                     </ul>
-                    <span class="estado-proyecto">En desarrollo - 85% completado</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">GraphQL</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="estado-proyecto">En desarrollo — 85%</span>
                   </p>
                 </a>
               </div>
             </div>
+
             <div class="proyecto-card">
               <div class="imagen-container">
-                <img src="./images/vistaprevia weddingapp.png" alt="Proyecto en desarrollo" />
+                <img src="./images/vistaprevia weddingapp.png" alt="App gestión de eventos — en desarrollo" loading="lazy" />
               </div>
               <div class="contenido-card">
-                <a href="https://appwedding.vercel.app/" target="_blank">
-                  <h3>Gestión de fiestas <br> React | Node.js | express.js | MongoDB</h3>
+                <a href="https://appwedding.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <h3>Gestión de fiestas</h3>
                   <p>
-                    Desarrollo de una plataforma de gestión de eventos:
+                    Plataforma de gestión de eventos con:
                     <ul>
                       <li>Autenticación de usuarios</li>
                       <li>Gestión de proveedores</li>
-                      <li>Calendario</li>
+                      <li>Calendario integrado</li>
                       <li>Notas y notificaciones</li>
                     </ul>
-                    <span class="estado-proyecto">En desarrollo - 90% completado</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="estado-proyecto">En desarrollo — 90%</span>
                   </p>
                 </a>
               </div>
             </div>
+
             <div class="proyecto-card">
               <div class="imagen-container">
-                <img src="./images/vista previoa ecomerce.png" alt="Vista previa e-commerce" />
+                <img src="./images/vista previoa ecomerce.png" alt="E-commerce full stack — en desarrollo" loading="lazy" />
               </div>
               <div class="contenido-card">
-                <a href="https://ecommerce-estructura.vercel.app/" target="_blank">
-                  <h3>E-commerce <br> React | Node.js | express.js | MongoDB</h3>
+                <a href="https://ecommerce-estructura.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <h3>E-commerce Full Stack</h3>
                   <p>
                     Comercio electrónico con:
                     <ul>
-                      <li>Autenticación de usuarios</li>
+                      <li>Autenticación JWT</li>
                       <li>Gestión de pagos</li>
                       <li>Carrito de compras</li>
                       <li>Filtrado de productos</li>
                     </ul>
-                    <span class="estado-proyecto">En desarrollo - 70% completado</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="estado-proyecto">En desarrollo — 70%</span>
                   </p>
                 </a>
               </div>
@@ -135,21 +158,28 @@
         </section>
       </section>
     </main>
+
     <footer>
-      <div class="footer-social">
-<a href="https://www.linkedin.com/in/luciano-ballespin-081233221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-link linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://github.com/luhoballespin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link github">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://instagram.com/luciano.ballespin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-link instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="header-logo">LB<span class="logo-dot">.</span></span>
+          <p>Backend &amp; Automation Developer</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/luciano-ballespin-081233221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-link linkedin">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/luhoballespin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link github">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://instagram.com/luciano.ballespin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-link instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; 2025 Luciano Ballespin. Todos los derechos reservados.</p>
       </div>
-      <p>&copy; 2025 Luciano Ballespin</p>
-      <p class="footer-motivation">¿Listo para crear algo increíble juntos?</p>
     </footer>
+
     <script src="scripts/main.js"></script>
   </body>
 </html>
