@@ -1597,7 +1597,7 @@ body.dark-mode .estado-proyecto {
     gap: 32px;
   }
 }
-
+ 
 @media (max-width: 900px) {
   .proyectos-grid {
     grid-template-columns: 1fr;
